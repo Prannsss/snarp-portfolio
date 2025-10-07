@@ -1,0 +1,33 @@
+---
+import FadeIn from '../FadeIn';
+---
+<section id="about" class="section py-20 md:py-32" style="background: rgb(var(--color-bg-primary));">
+  <FadeIn client:visible>
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="mb-12 text-4xl md:text-6xl text-center font-bold" style="color: rgb(var(--color-text-primary));">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <!-- Image -->
+        <div class="md:w-2/5">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+            <img 
+              src="/me.svg" 
+              alt="France Laurence Velarde" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        
+        <!-- Text Content -->
+        <div class="md:w-3/5 space-y-6 text-lg md:text-xl leading-relaxed text-justify" style="color: rgb(var(--color-text-primary));">
+          <p>
+            Hey! I’m France Laurence Velarde – a third-year BSIT student diving headfirst into the digital world. I’ve always been drawn to creativity and tech, which is why I’ve found my groove as a (lowkey) creator on YouTube. I love making fun, engaging videos and memes that (probably) make people smile. Lately, I’ve been really into design – from graphic design to UI/UX design, it’s where I get to turn ideas into visuals that actually connect with people. My coding skills are still a work in progress, but I’m super eager to learn and grow more in the tech space. The goal? To blend creativity and tech, and build something awesome and meaningful along the way.
+          </p>
+          <p>
+            I also work across design systems, system architechture, product design, and UX interactions.
+            I care deeply about typography, rhythm, and performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </FadeIn>
+</section>

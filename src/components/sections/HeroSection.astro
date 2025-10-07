@@ -1,0 +1,112 @@
+---
+import FadeIn from '../FadeIn';
+---
+<section id="home" class="section py-32 md:py-50" style="background: rgb(var(--color-bg-primary));">
+  <FadeIn client:visible>
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="mb-6 md:mb-8 text-5xl md:text-7xl lg:text-8xl font-bold leading-tight bg-gradient-to-r from-violet-600 via-red-500 via-pink-500 via-black via-white to-slate-900 bg-clip-text text-transparent bg-[length:200%_100%] bg-left hover:bg-right transition-all duration-1000 ease-in-out cursor-default">
+        France Laurence Velarde
+      </h1>
+      
+      <!-- Pill-style roles -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-10 md:mb-12">
+        <div class="flex items-center gap-2 px-6 py-3 rounded-full" style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3);">
+          <svg class="w-6 h-6" style="color: #a855f7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+          </svg>
+          <span class="text-lg md:text-xl font-medium italic" style="color: #a855f7;">Designer</span>
+        </div>
+        
+        <div class="flex items-center gap-2 px-6 py-3 rounded-full" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3);">
+          <svg class="w-6 h-6" style="color: #3b82f6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+          <span class="text-lg md:text-xl font-medium italic" style="color: #3b82f6;">Problem Solver</span>
+        </div>
+        
+        <div class="flex items-center gap-2 px-6 py-3 rounded-full" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3);">
+          <svg class="w-6 h-6" style="color: #f97316;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m4.5 13.5l3-16.5"/>
+          </svg>
+          <span class="text-lg md:text-xl font-medium italic" style="color: #f97316;">Developer</span>
+        </div>
+      </div>
+      
+      <p class="text-lg md:text-xl mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed" style="color: rgb(var(--color-text-primary));">
+        I help businesses tackle the world's biggest challenges with
+        tailored solutions, guiding you from strategy to success in a competitive market.
+      </p>
+      
+      <!-- CTA Button with Glare Effect -->
+      <div class="mb-16 md:mb-20">
+        <a 
+          href="#contact" 
+          id="contact-btn"
+          class="relative inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-lg font-medium transition-colors shadow-lg hover:shadow-xl overflow-hidden"
+        >
+          <span class="relative z-10">Contact Me</span>
+          <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+          <span class="glare absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full"></span>
+        </a>
+      </div>
+
+      <!-- Trust Indicators (optional - can add later) -->
+      <div class="flex items-center justify-center gap-4">
+        <div class="flex -space-x-2">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 ring-2 ring-white dark:ring-black"></div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 ring-2 ring-white dark:ring-black"></div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 ring-2 ring-white dark:ring-black"></div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-400 ring-2 ring-white dark:ring-black"></div>
+        </div>
+        <div class="text-left">
+          <div class="flex gap-1 text-yellow-500">
+            {'★'.repeat(5)}
+          </div>
+          <p class="text-sm" style="color: rgb(var(--color-text-secondary));">Trusted by 7 clients <span><i>so far...</i></span></p>
+        </div>
+      </div>
+    </div>
+  </FadeIn>
+</section>
+
+<style>
+  @keyframes glare {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .glare {
+    animation: glare 1s ease-in-out;
+  }
+</style>
+
+<script>
+  // Glare effect every 2 seconds
+  setInterval(() => {
+    const btn = document.getElementById('contact-btn');
+    const glare = btn?.querySelector('.glare') as HTMLElement;
+    
+    if (glare) {
+      // Remove animation class
+      glare.classList.remove('glare');
+      
+      // Trigger reflow to restart animation
+      void glare.offsetWidth;
+      
+      // Add animation class back
+      glare.classList.add('glare');
+    }
+  }, 2000);
+</script>
+

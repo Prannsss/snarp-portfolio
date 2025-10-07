@@ -1,0 +1,78 @@
+---
+import NavbarSinglePage from '../components/NavbarSinglePage.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'France Laurence Velarde - Designer & Developer',
+  description = 'Creative designer and developer crafting beautiful digital experiences. Portfolio showcasing design systems, mobile apps, and web applications.',
+  image = '/og-image.jpg'
+} = Astro.props;
+
+const siteUrl = Astro.site || new URL(Astro.url.pathname, 'http://localhost:4321');
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imageUrl = new URL(image, siteUrl);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logolight.svg" />
+    
+    <title>{title}</title>
+    
+    <!-- Theme Script (prevent flash) -->
+    <script is:inline>
+      const theme = localStorage.getItem('theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
+  </head>
+  <body class="antialiased relative">
+    <!-- Background SVG with Blur Effect -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <img 
+        src="/background.svg" 
+        alt="" 
+        fetchpriority="high"
+        class="absolute inset-0 w-full h-full object-cover opacity-100 dark:opacity-100"
+        style="filter: blur(80px);"
+      />
+    </div>
+    
+    <NavbarSinglePage />
+    <main class="min-h-screen relative">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

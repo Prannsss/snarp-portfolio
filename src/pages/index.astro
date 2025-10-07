@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import AboutSection from '../components/sections/AboutSection.astro';
+import ExperienceSection from '../components/sections/ExperienceSection.astro';
+import EducationSection from '../components/sections/EducationSection.astro';
+import ProjectsSection from '../components/sections/ProjectsSection.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+import TechMarquee from '../components/TechMarquee.astro';
+---
+<Layout title="France Laurence Velarde — Designer & Developer" description="Minimalist portfolio of France Laurence Velarde (Snarp)">
+  <HeroSection />
+  <AboutSection />
+  
+  <!-- Tech Stack Section -->
+  <section class="py-16" style="background: rgb(var(--color-bg-primary));">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h3 class="mb-8 text-2xl md:text-3xl font-medium" style="color: rgb(var(--color-text-primary));">Technologies I Work With</h3>
+      <TechMarquee />
+    </div>
+  </section>
+  
+  <ExperienceSection />
+  <EducationSection />
+  <ProjectsSection />
+  <ContactSection />
+</Layout>
+

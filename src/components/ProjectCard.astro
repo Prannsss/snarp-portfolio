@@ -1,0 +1,61 @@
+---
+interface Props {
+  project: {
+    id: string;
+    title: string;
+    category: string;
+    year: string;
+    description: string;
+    images: string[];
+    slug: string;
+  };
+  featured?: boolean;
+}
+
+const { project, featured = false } = Astro.props;
+---
+
+<a 
+  href={`/projects/${project.slug}`}
+  class={`group block rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 ${
+    featured ? 'md:col-span-2' : ''
+  }`}
+>
+  <!-- Project Image -->
+  <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-900">
+    <img
+      src={project.images[0]}
+      alt={project.title}
+      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <!-- Hover Overlay -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <span class="px-6 py-3 bg-white dark:bg-slate-800 rounded-full text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        View Project →
+      </span>
+    </div>
+  </div>
+
+  <!-- Project Info -->
+  <div class="p-6">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="text-xs font-medium px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+        {project.category}
+      </span>
+      <span class="text-xs text-slate-500 dark:text-slate-400">
+        {project.year}
+      </span>
+    </div>
+    
+    <h3 class="text-xl md:text-2xl font-bold font-display mb-2 group-hover:text-blue-500 transition-colors duration-300">
+      {project.title}
+    </h3>
+    
+    <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">
+      {project.description}
+    </p>
+  </div>
+</a>

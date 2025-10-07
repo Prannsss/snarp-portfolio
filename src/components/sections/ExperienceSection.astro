@@ -1,0 +1,169 @@
+---
+import FadeIn from '../FadeIn';
+---
+<section id="experience" class="section py-20 md:py-32" style="background: rgb(var(--color-bg-primary));">
+  <FadeIn client:visible>
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="mb-16 text-4xl md:text-6xl font-bold" style="color: rgb(var(--color-text-primary));">Experience</h2>
+      
+      <div class="relative">
+        <!-- Timeline Line -->
+        <div class="absolute left-8 top-0 bottom-0 w-px" style="background: rgb(var(--color-border));"></div>
+        
+        <div class="space-y-12">
+          <!-- Experience Item 1 -->
+          <div class="relative flex items-start gap-8">
+            <!-- Timeline Dot -->
+            <div class="flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 relative z-10"></div>
+            
+            <!-- Company Logo -->
+            <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
+              <img 
+                src="/logodark.svg" 
+                alt="France Velarde Logo" 
+                class="w-full h-full object-contain"
+              />
+            </div>
+            
+            <!-- Content -->
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between mb-2">
+                <div>
+                  <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">Freelance Web Designer and Developer</h3>
+                  <p class="text-lg" style="color: rgb(var(--color-accent));">Self-Employed</p>
+                </div>
+                <span class="text-sm font-medium" style="color: rgb(var(--color-text-secondary));">2021-Present</span>
+              </div>
+              
+              <div class="mb-4">
+                <h4 class="font-medium mb-2" style="color: rgb(var(--color-text-primary));">Activities</h4>
+                <ul class="space-y-2 text-sm" style="color: rgb(var(--color-text-primary));">
+                  <li>• Designed and developed responsive websites for various clients including e-commerce platforms, corporate websites, and portfolio sites.</li>
+                  <li class="experience-extra hidden">• Implemented modern web technologies including React, Vue.js, and Next.js to create dynamic user interfaces.</li>
+                  <li class="experience-extra hidden">• Collaborated with clients to understand their requirements and delivered custom solutions that exceed expectations.</li>
+                  <li class="experience-extra hidden">• Optimized websites for performance, SEO, and accessibility standards, resulting in improved user engagement.</li>
+                </ul>
+              </div>
+              
+              <button onclick="toggleExperience(this)" class="see-more-btn text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:opacity-80 active:scale-95" style="color: rgb(var(--color-text-secondary)); background: rgb(var(--color-bg-secondary));">
+                See more
+              </button>
+            </div>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="relative flex items-start gap-8">
+            <!-- Timeline Dot -->
+            <div class="flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 relative z-10"></div>
+            
+            <!-- Company Logo -->
+            <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
+              <img 
+                src="/toyota.svg" 
+                alt="Toyota Logo" 
+                class="w-full h-full object-contain"
+              />
+            </div>
+            
+            <!-- Content -->
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between mb-2">
+                <div>
+                  <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">Graphic Designer and Social Media Manager</h3>
+                  <p class="text-lg" style="color: rgb(var(--color-accent));">Toyota Mandaue South Cebu</p>
+                </div>
+                <span class="text-sm font-medium" style="color: rgb(var(--color-text-secondary));">October 2024 - Present</span>
+              </div>
+              
+              <div class="mb-4">
+                <h4 class="font-medium mb-2" style="color: rgb(var(--color-text-primary));">Activities</h4>
+                <ul class="space-y-2 text-sm" style="color: rgb(var(--color-text-primary));">
+                  <li>• Designed Graphics for Facebook advertising at Toyota Mandaue South Cebu. </li>
+                  <li class="experience-extra hidden">• Optimized Ad targeting and demographics leading to a 70% increase in monthly sales and closed deals. </li>
+                  <li class="experience-extra hidden">• Implemented auto reply messages to handle customer inquiries and support.</li>
+                </ul>
+              </div>
+              
+              <button onclick="toggleExperience(this)" class="see-more-btn text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:opacity-80 active:scale-95" style="color: rgb(var(--color-text-secondary)); background: rgb(var(--color-bg-secondary));">
+                See more
+              </button>
+            </div>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Future Quote -->
+      <div class="mt-20 text-center relative">
+        <blockquote class="relative inline-block max-w-4xl">
+          <h1 id="shiny-quote" class="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold italic leading-tight tracking-wide px-4 relative overflow-hidden" style="color: rgb(var(--color-text-primary)); font-family: 'Playfair Display', 'CMU Sans Serif Italic', serif; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            Looking forward to more experiences and opportunities in the future!
+            <span class="shine-effect absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full"></span>
+          </h1>
+          <div class="absolute -top-2 md:-top-4 -left-2 md:-left-4 text-4xl md:text-6xl lg:text-8xl opacity-60 dark:opacity-80 pointer-events-none font-bold" style="color: rgb(var(--color-accent)); font-family: serif;">"</div>
+          <div class="absolute -bottom-2 md:-bottom-4 -right-2 md:-right-4 text-4xl md:text-6xl lg:text-8xl opacity-60 dark:opacity-80 pointer-events-none rotate-180 font-bold" style="color: rgb(var(--color-accent)); font-family: serif;">"</div>
+        </blockquote>
+      </div>
+    </div>
+  </FadeIn>
+</section>
+
+<style>
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .shine-effect {
+    animation: shine 1s ease-in-out;
+    mix-blend-mode: overlay;
+  }
+</style>
+
+<script is:inline>
+  function toggleExperience(button) {
+    const container = button.closest('.relative.flex');
+    if (!container) return;
+    
+    const extraItems = container.querySelectorAll('.experience-extra');
+    if (extraItems.length === 0) return;
+    
+    const isExpanded = !extraItems[0].classList.contains('hidden');
+    
+    extraItems.forEach((item) => {
+      if (isExpanded) {
+        item.classList.add('hidden');
+      } else {
+        item.classList.remove('hidden');
+      }
+    });
+    
+    button.textContent = isExpanded ? 'See more' : 'See less';
+  }
+
+  // Shine effect every 1.5 seconds
+  setInterval(() => {
+    const shineElement = document.querySelector('#shiny-quote .shine-effect');
+    
+    if (shineElement) {
+      // Remove animation class
+      shineElement.classList.remove('shine-effect');
+      
+      // Trigger reflow to restart animation
+      void shineElement.offsetWidth;
+      
+      // Add animation class back
+      shineElement.classList.add('shine-effect');
+    }
+  }, 1500);
+</script>

@@ -1,0 +1,120 @@
+[
+  {
+    "id": "portfolio",
+    "title": "Design Portfolio",
+    "slug": "portfolio",
+    "category": "Portfolio",
+    "year": "2025",
+    "role": "Designer & Developer",
+    "description": "A showcase of my design work, featuring a collection of projects that highlight my skills and creativity. Each project is presented with a detailed description, including the problem it solves, the design process, and the final solution. The portfolio is built using Astro, a modern static site generator, and Tailwind CSS, a utility-first CSS framework. The source code is available on GitHub",
+    "images": [
+      "portfolio.svg"
+    ],
+    "link": "null",
+    "github": "https://github.com/Prannsss/Portfolio",
+    "featured": true
+  },
+  {
+    "id": "Budgee",
+    "title": "Budgee",
+    "slug": "budgee",
+    "category": "Finance",
+    "year": "2025",
+    "role": "UI/UX Designer & Developer",
+    "description": "A personal finance app that helps users manage their budgets, track expenses, and achieve their financial goals. Budgee offers a user-friendly interface with features like expense categorization, budget planning, and financial insights. The app is built using React TypeScript for cross-platform compatibility and integrates with various financial APIs for real-time data synchronization.",
+    "images": [
+      "budgee.svg"
+    ],
+    "link": "https://budgeebuddy.vercel.app/",
+    "github": "https://github.com/Prannsss/Budgee",
+    "featured": true
+  },
+  {
+    "id": "SakayCebu",
+    "title": "Sakay Cebu",
+    "slug": "sakay-cebu",
+    "category": "Vehicle Rental",
+    "year": "2025",
+    "role": "UI/UX Designer & Developer",
+    "description": "A transportation app that helps users find and book rental vehicles in Cebu. Sakay Cebu offers a user-friendly interface with features like vehicle search, booking management, and real-time availability tracking. The app is built using React Typescript for cross-platform compatibility.",
+    "images": [
+      "sakaycebu.svg"
+    ],
+    "link": "https://sakaycebu.vercel.app/",
+    "github": "https://github.com/Prannsss/Sakay-Cebu",
+    "featured": true
+  },
+  {
+    "id": "ROME",
+    "title": "ROME",
+    "slug": "rome",
+    "category": "Room Rental",
+    "year": "2024",
+    "role": "UI/UX Designer & Developer",
+    "description": "A room rental WebApp that helps users find and book rental rooms in Cebu. ROME offers a user-friendly interface with features like room search, booking management, and real-time availability tracking. The app is built using HTML, CSS, and JavaScript.",
+    "images": [
+      "rome.svg"
+    ],
+    "github": "https://github.com/Prannsss/ROME",
+    "featured": true
+  },
+  {
+    "id": "BusQ",
+    "title": "BusQ",
+    "slug": "busq",
+    "category": "Bus Booking System",
+    "year": "2024",
+    "role": "UI/UX Designer & Developer",
+    "description": "A bus booking WebApp that helps users seamlessly and book bus tickets in Cebu. BusQ offers a user-friendly interface with features like bus search, booking management, and real-time availability tracking. The app is built using TypeScript, Next.js, and Node.js.",
+    "images": [
+      "busq.svg"
+    ],
+    "github": "https://github.com/Prannsss/BusQ",
+    "featured": true
+  },
+  {
+    "id": "Binary",
+    "title": "Binary",
+    "slug": "binary",
+    "category": "Learning and Conversion Platform",
+    "year": "2024",
+    "role": "UI/UX Designer & Developer",
+    "description": "A platform that helps students understand Binary conversion. Binary offers a user-friendly interface with features like Binary to Decimal conversion, Decimal to Binary conversion, and Binary to Hexadecimal conversion. The app is built using HTML, CSS, and JavaScript.",
+    "images": [
+      "binary.svg"
+    ],
+    "link": "https://prannsss.github.io/BINARY",
+    "github": "https://github.com/Prannsss/BINARY",
+    "featured": true
+  },
+  {
+    "id": "Exponential Functions",
+    "title": "Exponential Functions",
+    "slug": "exponential-functions",
+    "category": "Learning and Visualization Platform",
+    "year": "2024",
+    "role": "UI/UX Designer & Developer",
+    "description": "A platform that helps students understand Exponential Functions. It offers a user-friendly interface with features like function visualization, interactive graphs, and real-world applications. The app is built using HTML, CSS, and JavaScript.",
+    "images": [
+      "expfunction.svg"
+    ],
+    "link": "https://prannsss.github.io/Exponential-Functions",
+    "github": "https://github.com/Prannsss/Exponential-Functions",
+    "featured": true
+  },
+  {
+    "id": "Snarp",
+    "title": "Snarp",
+    "slug": "snarp",
+    "category": "First Portfolio Design",
+    "year": "2024",
+    "role": "UI/UX Designer & Developer",
+    "description": "My first ever portfolio design. It showcases my skills and projects. The portfolio is built using HTML, CSS, and JavaScript.",
+    "images": [
+      "snarp.svg"
+    ],
+    "link": "https://prannsss.github.io/Snarp",
+    "github": "https://github.com/Prannsss/Snarp",
+    "featured": true
+  }
+]

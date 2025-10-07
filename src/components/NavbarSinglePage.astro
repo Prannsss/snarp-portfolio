@@ -1,0 +1,339 @@
+---
+// (The rest of your component's frontmatter remains the same)
+import ThemeToggle from "./ThemeToggle";
+const links = [
+  { href: "#about", label: "About Me" },
+  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<nav
+  class="fixed top-4 md:top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4"
+>
+  <div
+    id="navbar-dynamic"
+    class="hidden md:flex items-center justify-between backdrop-blur-2xl rounded-full shadow-xl overflow-hidden"
+    style="--bg-alpha: 0.1; background: rgba(var(--color-bg-primary) / var(--bg-alpha)); border: 1px solid rgb(var(--color-border)); padding: 20px 32px; width: 800px; max-width: 90vw; transition: width 0.3s ease, padding 0.3s ease, backdrop-filter 0.3s ease;"
+  >
+    <a
+      href="#home"
+      id="dynamic-logo-link"
+      class="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity"
+    >
+      <div
+        id="dynamic-logo-container"
+        class="rounded-lg flex items-center justify-center transition-all duration-300"
+        style="width: 48px; height: 48px;"
+      >
+        <img
+          id="logo-light"
+          src="/logodark.svg"
+          alt="France Velarde Logo"
+          class="w-full h-full"
+        />
+        <img
+          id="logo-dark"
+          src="/logolight.svg"
+          alt="France Velarde Logo"
+          class="w-full h-full hidden"
+        />
+      </div>
+    </a>
+    <div
+      id="center-content"
+      class="flex-grow flex justify-center items-center relative mx-4 h-12 overflow-hidden"
+    >
+      <div
+        id="full-links"
+        class="flex items-center gap-3 transition-opacity duration-200"
+      >
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="nav-link px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:bg-indigo-600/75 dark:hover:bg-indigo-400/75 whitespace-nowrap"
+              style="color: rgb(var(--color-text-primary));"
+              data-section={link.href.replace("#", "")}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+      <div
+        id="collapsed-content"
+        class="absolute flex items-center gap-3 opacity-0 pointer-events-none cursor-pointer"
+        style="color: rgb(var(--color-text-primary));"
+      >
+        <span id="current-section" class="text-base font-medium">About Me</span>
+        <svg
+          id="expand-icon"
+          class="w-4 h-4 ml-1 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          style="color: rgb(var(--color-text-secondary));"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="flex-shrink-0">
+      <ThemeToggle client:load />
+    </div>
+  </div>
+
+  <div
+    class="flex md:hidden items-center justify-between backdrop-blur-lg rounded-full px-6 py-4 shadow-lg w-full max-w-md"
+    style="background: rgba(var(--color-bg-primary) / 0.9); border: 1px solid rgb(var(--color-border));"
+  >
+    <a
+      href="#home"
+      class="flex items-center hover:opacity-80 transition-opacity flex-shrink-0"
+    >
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+        <img
+          id="mobile-logo-light"
+          src="/logodark.svg"
+          alt="France Velarde Logo"
+          class="w-full h-full"
+        />
+        <img
+          id="mobile-logo-dark"
+          src="/logolight.svg"
+          alt="France Velarde Logo"
+          class="w-full h-full hidden"
+        />
+      </div>
+    </a>
+    <div class="flex-1 flex justify-center">
+      <ThemeToggle client:load />
+    </div>
+    <button
+      id="mobile-menu-toggle"
+      class="p-2 rounded-lg transition-colors hover:bg-black/5 dark:hover:bg-white/10 flex-shrink-0"
+      aria-label="Toggle menu"
+    >
+      <div class="w-6 h-6 flex flex-col justify-center items-center">
+        <span class="hamburger-line block w-6 h-0.5 bg-current transition-all duration-300" style="color: rgb(var(--color-text-primary));"></span>
+        <span class="hamburger-line block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5" style="color: rgb(var(--color-text-primary));"></span>
+        <span class="hamburger-line block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5" style="color: rgb(var(--color-text-primary));"></span>
+      </div>
+    </button>
+  </div>
+  <div
+    id="mobile-menu"
+    class="md:hidden absolute top-full left-0 right-0 mt-4 backdrop-blur-lg rounded-2xl shadow-lg border hidden mx-4"
+    style="background: rgba(var(--color-bg-primary) / 0.95); border-color: rgb(var(--color-border));"
+  >
+    <div class="p-6 space-y-3">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="block px-4 py-3 rounded-xl text-lg font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/10 mobile-menu-link"
+            style="color: rgb(var(--color-text-primary));"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar-dynamic");
+    if (!navbar) return;
+
+    // --- Element Selectors ---
+    const logoContainer = document.getElementById("dynamic-logo-container");
+    const fullLinks = document.getElementById("full-links");
+    const collapsedContent = document.getElementById("collapsed-content");
+    const currentSectionSpan = document.getElementById("current-section");
+    const expandIcon = document.getElementById("expand-icon");
+
+    // --- Animation Parameters ---
+    const ANIMATION_START_SCROLL = 20;
+    const ANIMATION_END_SCROLL = 150;
+    const EXPANDED_WIDTH = 800,
+      COLLAPSED_WIDTH = 240;
+    const EXPANDED_PADDING = 20,
+      COLLAPSED_PADDING = 16;
+    const EXPANDED_LOGO = 48,
+      COLLAPSED_LOGO = 32;
+    const MIN_BG_ALPHA = 0.1,
+      MAX_BG_ALPHA = 0.3; // For background animation - lower for glass effect
+
+    // --- Scroll-Driven Animation Logic ---
+    let isTicking = false;
+    let manualExpandTimer;
+
+    const updateNavbarStyle = (progress) => {
+      const p = Math.max(0, Math.min(1, progress));
+
+      // Interpolate values for size and padding
+      const width = EXPANDED_WIDTH - (EXPANDED_WIDTH - COLLAPSED_WIDTH) * p;
+      const padding =
+        EXPANDED_PADDING - (EXPANDED_PADDING - COLLAPSED_PADDING) * p;
+      const logoSize = EXPANDED_LOGO - (EXPANDED_LOGO - COLLAPSED_LOGO) * p;
+
+      // *** NEW: Interpolate background alpha ***
+      const bgAlpha = MIN_BG_ALPHA + (MAX_BG_ALPHA - MIN_BG_ALPHA) * p;
+
+      // Apply styles
+      navbar.style.width = `${width}px`;
+      navbar.style.padding = `${padding}px 32px`;
+      logoContainer.style.width = `${logoSize}px`;
+      logoContainer.style.height = `${logoSize}px`;
+      navbar.style.setProperty("--bg-alpha", bgAlpha.toFixed(2));
+
+      // Cross-fade content
+      fullLinks.style.opacity = 1 - p * 1.5;
+      collapsedContent.style.opacity = p * 1.5 - 0.5;
+      fullLinks.style.pointerEvents = p > 0.5 ? "none" : "auto";
+      collapsedContent.style.pointerEvents = p > 0.8 ? "auto" : "none";
+    };
+
+    const handleScroll = () => {
+      if (document.body.dataset.manualExpand === "true") return;
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const progress =
+            (scrollY - ANIMATION_START_SCROLL) /
+            (ANIMATION_END_SCROLL - ANIMATION_START_SCROLL);
+          updateNavbarStyle(progress);
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    };
+
+    const expandNavbarOnClick = () => {
+      document.body.dataset.manualExpand = "true";
+      expandIcon.classList.add("rotate-180");
+      let progress = 1;
+      const interval = setInterval(() => {
+        progress -= 0.1;
+        if (progress <= 0) {
+          progress = 0;
+          clearInterval(interval);
+        }
+        updateNavbarStyle(progress);
+      }, 16);
+      clearTimeout(manualExpandTimer);
+      manualExpandTimer = setTimeout(() => {
+        document.body.dataset.manualExpand = "false";
+        expandIcon.classList.remove("rotate-180");
+        handleScroll();
+      }, 4000);
+    };
+
+    // --- Active Section & Theme Logic (Unchanged) ---
+    const sectionNames = {
+      home: "Home",
+      about: "About Me",
+      education: "Education",
+      experience: "Experience",
+      projects: "Projects",
+      contact: "Contact",
+    };
+    const updateActiveLink = (sectionId) => {
+      currentSectionSpan.textContent = sectionNames[sectionId] || "Home";
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        const isSelected = link.getAttribute("data-section") === sectionId;
+        link.style.background = isSelected
+          ? "rgb(var(--color-accent) / 0.1)"
+          : "";
+        link.style.color = isSelected
+          ? "rgb(var(--color-accent))"
+          : "rgb(var(--color-text-primary))";
+      });
+    };
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(
+          (entry) => entry.isIntersecting && updateActiveLink(entry.target.id)
+        );
+      },
+      { rootMargin: "-20% 0px -60% 0px" }
+    );
+    document
+      .querySelectorAll("section[id]")
+      .forEach((section) => sectionObserver.observe(section));
+    const updateLogo = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      document
+        .querySelectorAll("#logo-light, #mobile-logo-light")
+        .forEach((el) => el.classList.toggle("hidden", isDark));
+      document
+        .querySelectorAll("#logo-dark, #mobile-logo-dark")
+        .forEach((el) => el.classList.toggle("hidden", !isDark));
+    };
+    const themeObserver = new MutationObserver(updateLogo);
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    updateLogo();
+
+    // --- Mobile Menu ---
+    const menuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburgerLines = menuToggle.querySelectorAll(".hamburger-line");
+    
+    menuToggle.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      
+      // Animate burger to X
+      if (!isOpen) {
+        // Transform to X
+        hamburgerLines[0].style.transform = "rotate(45deg) translateY(8px)";
+        hamburgerLines[1].style.opacity = "0";
+        hamburgerLines[2].style.transform = "rotate(-45deg) translateY(-8px)";
+      } else {
+        // Transform back to burger
+        hamburgerLines[0].style.transform = "rotate(0) translateY(0)";
+        hamburgerLines[1].style.opacity = "1";
+        hamburgerLines[2].style.transform = "rotate(0) translateY(0)";
+      }
+    });
+    
+    document
+      .querySelectorAll(".mobile-menu-link")
+      .forEach((link) =>
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          // Reset burger icon
+          hamburgerLines[0].style.transform = "rotate(0) translateY(0)";
+          hamburgerLines[1].style.opacity = "1";
+          hamburgerLines[2].style.transform = "rotate(0) translateY(0)";
+        })
+      );
+
+    // --- Responsive Setup (Unchanged) ---
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const handleScreenChange = (e) => {
+      if (e.matches) {
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        collapsedContent.addEventListener("click", expandNavbarOnClick);
+        handleScroll();
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+        collapsedContent.removeEventListener("click", expandNavbarOnClick);
+      }
+    };
+    mediaQuery.addEventListener("change", handleScreenChange);
+    handleScreenChange(mediaQuery);
+  });
+</script>

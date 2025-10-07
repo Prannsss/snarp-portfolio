@@ -1,0 +1,52 @@
+---
+import FadeIn from '../FadeIn';
+---
+<section id="education" class="section py-20 md:py-32" style="background: rgb(var(--color-bg-primary));">
+  <FadeIn client:visible>
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="mb-16 text-4xl md:text-6xl font-bold" style="color: rgb(var(--color-text-primary));">Education</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- College Education -->
+        <div class="flex items-start gap-6">
+          <!-- School Logo -->
+          <div class="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden">
+            <img 
+              src="/uspf.svg" 
+              alt="University of Southern Philippines Foundation Logo" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+          
+          <!-- Content -->
+          <div class="flex-1">
+            <p class="text-sm font-medium mb-1" style="color: rgb(var(--color-text-secondary));">College</p>
+            <h3 class="text-lg font-semibold mb-1" style="color: rgb(var(--color-text-primary));">Bachelor of Science in Information Technology</h3>
+            <p class="text-sm mb-2" style="color: rgb(var(--color-text-secondary));">August 2023 - Present</p>
+            <p class="text-sm font-medium" style="color: rgb(var(--color-accent));">University of Southern Philippines Foundation</p>
+          </div>
+        </div>
+
+        <!-- Senior High School -->
+        <div class="flex items-start gap-6">
+          <!-- School Logo -->
+          <div class="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden">
+            <img 
+              src="/dnhs.svg" 
+              alt="Dalaguete National High School Logo" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+          
+          <!-- Content -->
+          <div class="flex-1">
+            <p class="text-sm font-medium mb-1" style="color: rgb(var(--color-text-secondary));">Senior High School</p>
+            <h3 class="text-lg font-semibold mb-1" style="color: rgb(var(--color-text-primary));">Science, Technology, Engineering, and Mathematics</h3>
+            <p class="text-sm mb-2" style="color: rgb(var(--color-text-secondary));">2021 - 2023</p>
+            <p class="text-sm font-medium" style="color: rgb(var(--color-accent));">Dalaguete National High School</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </FadeIn>
+</section>
