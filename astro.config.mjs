@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://snarp.dev',
+  site: 'https://snarpdev.vercel.app',
   integrations: [react()],
 
   vite: {

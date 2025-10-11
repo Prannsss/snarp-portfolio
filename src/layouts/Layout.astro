@@ -7,15 +7,19 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  keywords?: string;
+  author?: string;
 }
 
 const {
   title = 'France Laurence Velarde - Designer & Developer',
-  description = 'Creative designer and developer crafting beautiful digital experiences. Portfolio showcasing design systems, mobile apps, and web applications.',
-  image = '/og-image.jpg'
+  description = 'Creative designer and developer crafting beautiful digital experiences. Specializing in UI/UX design, web development, and design systems. Portfolio showcasing innovative projects.',
+  image = '/og-image.jpg',
+  keywords = 'France Laurence Velarde, Snarp, web developer, UI/UX designer, frontend developer, portfolio, design systems, React developer, TypeScript, Astro',
+  author = 'France Laurence Velarde'
 } = Astro.props;
 
-const siteUrl = Astro.site || new URL(Astro.url.pathname, 'http://localhost:4321');
+const siteUrl = Astro.site || new URL(Astro.url.pathname, 'https://snarpdev.vercel.app');
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const imageUrl = new URL(image, siteUrl);
 ---
@@ -26,7 +30,16 @@ const imageUrl = new URL(image, siteUrl);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="theme-color" content="#6366f1" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -37,24 +50,70 @@ const imageUrl = new URL(image, siteUrl);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="France Laurence Velarde Portfolio" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:creator" content="@snarp" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/logolight.svg" />
+    <!-- Favicons - Theme Adaptive -->
+    <link rel="icon" id="favicon" type="image/svg+xml" href="/logodark.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "France Laurence Velarde",
+        "alternateName": "Snarp",
+        "url": "https://snarpdev.vercel.app",
+        "image": "https://snarpdev.vercel.app/og-image.jpg",
+        "sameAs": [
+          "https://github.com/Prannsss",
+          "https://www.linkedin.com/in/francelaurence-velarde/"
+        ],
+        "jobTitle": "Designer & Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance, Part-time and Full-time"
+        },
+        "description": "Creative designer and developer specializing in UI/UX design, web development, and design systems."
+      }
+    </script>
     
     <title>{title}</title>
     
     <!-- Theme Script (prevent flash) -->
     <script is:inline>
+      // Website theme toggle (for site colors)
       const theme = localStorage.getItem('theme') || 
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.classList.toggle('dark', theme === 'dark');
+
+      // Favicon based on the user's system theme only (not affected by site theme toggle component para chuy)
+      const updateFavicon = () => {
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const favicon = document.getElementById('favicon');
+        if (favicon) {
+          // If system is dark, use light logo (so it's visible on dark tab bar)
+          // If system is light, use dark logo (so it's visible on light tab bar)
+          favicon.href = systemPrefersDark ? '/logolight.svg' : '/logodark.svg';
+        }
+      };
+      
+      // Set initial favicon
+      updateFavicon();
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
     </script>
   </head>
   <body class="antialiased relative">

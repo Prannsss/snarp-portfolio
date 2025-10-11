@@ -20,6 +20,7 @@ export default function ThemeToggle() {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    // Note: Favicon is controlled by system theme only, not by this toggle
   };
 
   if (!mounted) {
