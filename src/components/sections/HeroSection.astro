@@ -42,13 +42,16 @@ import FadeIn from '../FadeIn';
         <a 
           href="#contact" 
           id="contact-btn"
-          class="relative inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-lg font-medium transition-colors shadow-lg hover:shadow-xl overflow-hidden"
+          class="relative inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 overflow-hidden group"
         >
           <span class="relative z-10">Contact Me</span>
           <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
-          <span class="glare absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full"></span>
+          <!-- Auto glare -->
+          <span class="glare-auto absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full skew-x-12"></span>
+          <!-- Hover glare -->
+          <span class="glare-hover absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full skew-x-12"></span>
         </a>
       </div>
 
@@ -64,7 +67,7 @@ import FadeIn from '../FadeIn';
           <div class="flex gap-1 text-yellow-500">
             {'★'.repeat(5)}
           </div>
-          <p class="text-sm" style="color: rgb(var(--color-text-secondary));">Trusted by 9 clients <span><i>so far...</i></span></p>
+          <p class="text-sm" style="color: rgb(var(--color-text-secondary));">Trusted by 11 clients <span><i>so far...</i></span></p>
         </div>
       </div>
     </div>
@@ -74,39 +77,57 @@ import FadeIn from '../FadeIn';
 <style>
   @keyframes glare {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(-150%) skewX(-12deg);
       opacity: 0;
     }
     50% {
-      opacity: 0.3;
+      opacity: 0.6;
     }
     100% {
-      transform: translateX(100%);
+      transform: translateX(150%) skewX(-12deg);
       opacity: 0;
     }
   }
 
-  .glare {
-    animation: glare 1s ease-in-out;
+  @keyframes glare-hover {
+    0% {
+      transform: translateX(-150%) skewX(-12deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(150%) skewX(-12deg);
+      opacity: 0;
+    }
+  }
+
+  .glare-auto {
+    animation: glare 1.2s ease-in-out;
+  }
+
+  #contact-btn:hover .glare-hover {
+    animation: glare-hover 0.6s ease-in-out;
   }
 </style>
 
 <script>
-  // Glare effect every 2 seconds
+  // Auto glare effect every 3 seconds
   setInterval(() => {
     const btn = document.getElementById('contact-btn');
-    const glare = btn?.querySelector('.glare') as HTMLElement;
+    const glare = btn?.querySelector('.glare-auto') as HTMLElement;
     
     if (glare) {
       // Remove animation class
-      glare.classList.remove('glare');
+      glare.classList.remove('glare-auto');
       
       // Trigger reflow to restart animation
       void glare.offsetWidth;
       
       // Add animation class back
-      glare.classList.add('glare');
+      glare.classList.add('glare-auto');
     }
-  }, 2000);
+  }, 3000);
 </script>
 
