@@ -70,3 +70,82 @@
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0 0 0 / .15); border-radius: 20px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(0 0 0 / .28); }
+
+:root {
+  /* This bezier curve feels like "expensive" fluid physics */
+  --cursor-ease: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: normal;
+  box-sizing: border-box; /* Ensures padding doesn't expand the size */
+  will-change: transform, width, height;
+}
+
+/* STATE 1: Default Mouse Follow */
+.custom-cursor-default {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgb(113, 113, 122);
+  
+  /* MOVEMENT: Fast and responsive via transform */
+  /* Remove width/height/border-radius transitions here to make detach snappy */
+  transition: 
+    transform 0.08s linear,
+    opacity 0.3s var(--cursor-ease),
+    background-color 0.3s var(--cursor-ease);
+}
+
+/* STATE 2: Clicking (Shrink slightly) */
+.custom-cursor-clicking {
+  width: 8px;
+  height: 8px;
+  /* Snappier transition for the click feel */
+  transition: width 0.1s ease-out, height 0.1s ease-out !important; 
+}
+
+/* STATE 3: Magnetized/Hovering */
+.custom-cursor-hovering {
+  border: 1.5px solid rgba(113, 113, 122, 0.5);
+  background-color: rgba(113, 113, 122, 0.05);
+  
+  /* The "Magnet" snap effect - transitions ONLY on entering hover state */
+  transition: 
+    transform 0.4s var(--cursor-ease),
+    width 0.4s var(--cursor-ease),
+    height 0.4s var(--cursor-ease),
+    border-radius 0.4s var(--cursor-ease),
+    background-color 0.3s var(--cursor-ease);
+}
+
+.custom-cursor-hidden {
+  opacity: 0;
+}
+
+.custom-cursor-visible {
+  opacity: 1;
+}
+
+/* Animation for text when cursor hovers */
+@keyframes cursorShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+
+* {
+  cursor: none !important;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  * { cursor: auto !important; }
+  .custom-cursor { display: none !important; }
+}

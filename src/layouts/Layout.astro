@@ -1,6 +1,7 @@
 ---
 import NavbarSinglePage from '../components/NavbarSinglePage.astro';
 import Footer from '../components/Footer.astro';
+import CustomCursor from '../components/CustomCursor';
 import '../styles/global.css';
 
 interface Props {
@@ -117,6 +118,9 @@ const imageUrl = new URL(image, siteUrl);
     </script>
   </head>
   <body class="antialiased relative">
+    <!-- Custom Cursor -->
+    <CustomCursor client:load />
+    
     <!-- Background SVG with Blur Effect -->
     <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       <img 
