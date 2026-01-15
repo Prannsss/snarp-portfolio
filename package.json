@@ -10,17 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.4.0",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/react": "^4.4.2",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.2.1",
     "@types/react-dom": "^19.2.0",
-    "astro": "^5.14.1",
+    "astro": "^5.16.9",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.545.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.14",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "baseline-browser-mapping": "^2.9.14"
   }
 }

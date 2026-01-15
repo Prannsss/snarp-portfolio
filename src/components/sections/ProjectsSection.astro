@@ -2,18 +2,21 @@
 import projectsData from '../../data/projects.json';
 import FadeIn from '../FadeIn';
 
-const featured = projectsData.slice(0, 3);
-const additional = projectsData.slice(3);
+const featured = projectsData.slice(0, 4);
+const additional = projectsData.slice(4);
 ---
 <section id="projects" class="section py-20 md:py-32" style="background: rgb(var(--color-bg-primary));">
   <FadeIn client:visible>
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="mb-16 text-4xl md:text-6xl text-center font-bold" style="color: rgb(var(--color-text-primary));">My Projects</h2>
-      <div class="space-y-16">
-        {featured.map(p => (
-          <article class="group">
-            <div class="flex flex-col md:flex-row md:items-start gap-8">
-              <div class="md:w-2/5 aspect-[4/3] rounded-lg overflow-hidden" style="background: rgb(var(--color-bg-secondary));">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="mb-16 text-4xl md:text-6xl text-center font-bold" style="color: rgb(var(--color-text-primary));">My Notable Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        {featured.map((p, index) => (
+          <article class:list={[
+            "group",
+            { "md:col-span-2 md:max-w-lg md:mx-auto": featured.length % 2 !== 0 && index === featured.length - 1 }
+          ]}>
+            <div class="flex flex-col gap-6">
+              <div class="w-full aspect-[4/3] rounded-lg overflow-hidden" style="background: rgb(var(--color-bg-secondary));">
                 <img 
                   src={p.images[0]} 
                   alt={p.title}
@@ -21,7 +24,7 @@ const additional = projectsData.slice(3);
                   loading="lazy"
                 />
               </div>
-              <div class="md:w-3/5 space-y-4">
+              <div class="space-y-4">
                 <div class="flex items-center gap-3 text-sm" style="color: rgb(var(--color-text-secondary));">
                   <span>{p.category}</span>
                   <span>·</span>
@@ -63,11 +66,15 @@ const additional = projectsData.slice(3);
       </div>
       
       <!-- Additional Projects (Hidden by default) -->
-      <div id="additional-projects" class="space-y-16 mt-16 hidden">
-        {additional.map(p => (
-          <article class="group">
-            <div class="flex flex-col md:flex-row md:items-start gap-8">
-              <div class="md:w-2/5 aspect-[4/3] rounded-lg overflow-hidden" style="background: rgb(var(--color-bg-secondary));">
+      <div id="additional-projects" class="hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-8 md:mt-12">
+        {additional.map((p, index) => (
+          <article class:list={[
+            "group",
+            { "md:col-span-2 md:max-w-lg md:mx-auto": additional.length % 2 !== 0 && index === additional.length - 1 }
+          ]}>
+            <div class="flex flex-col gap-6">
+              <div class="w-full aspect-[4/3] rounded-lg overflow-hidden" style="background: rgb(var(--color-bg-secondary));">
                 <img 
                   src={p.images[0]} 
                   alt={p.title}
@@ -75,7 +82,7 @@ const additional = projectsData.slice(3);
                   loading="lazy"
                 />
               </div>
-              <div class="md:w-3/5 space-y-4">
+              <div class="space-y-4">
                 <div class="flex items-center gap-3 text-sm" style="color: rgb(var(--color-text-secondary));">
                   <span>{p.category}</span>
                   <span>·</span>
@@ -114,6 +121,7 @@ const additional = projectsData.slice(3);
             </div>
           </article>
         ))}
+        </div>
       </div>
       
       <!-- Action Buttons -->

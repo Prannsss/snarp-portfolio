@@ -1,4 +1,5 @@
 ---
+import { MapPin, Mail } from 'lucide-react';
 const year = new Date().getFullYear();
 ---
 <footer class="bg-zinc-950 dark:bg-black text-gray-300 dark:text-gray-400 py-16">
@@ -65,8 +66,14 @@ const year = new Date().getFullYear();
           <div>
             <h3 class="text-white font-semibold mb-4">Contact Details</h3>
             <ul class="space-y-2 text-sm">
-              <li class="text-gray-400">Cebu, Philippines</li>
-              <li><a href="mailto:vfrancelaurence@gmail.com" class="hover:text-white transition-colors">vfrancelaurence@gmail.com</a></li>
+              <li class="flex items-center gap-2 text-gray-400">
+                <MapPin className="w-4 h-4" />
+                <span>Cebu, Philippines</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-gray-400" />
+                <a href="mailto:vfrancelaurence@gmail.com" class="hover:text-white transition-colors">vfrancelaurence@gmail.com</a>
+              </li>
             </ul>
           </div>
         </div>

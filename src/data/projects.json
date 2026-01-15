@@ -1,5 +1,33 @@
 [
   {
+    "id": "Elimar Spring Garden Resort",
+    "title": "Elimar Spring Garden Resort",
+    "slug": "Elimar-Spring-Garden-Resort",
+    "category": "Commissioned Project",
+    "year": "2025",
+    "role": "Designer & Full Stack Developer",
+    "description": "A commissioned project for Elimar Spring Garden Resort, a serene getaway destination. The website showcases the resort's amenities, accommodations, and booking options. Built using TypeScript, the site offers a seamless user experience with responsive design and easy navigation.",
+    "images": [
+      "projects/elimar.svg"
+    ],
+    "link": "https://elimarspringgarden.vercel.app/",
+    "featured": true
+  },
+  {
+    "id": "Abalos Funeral Homes",
+    "title": "Abalos Funeral Homes",
+    "slug": "Abalos-Funeral-Homes",
+    "category": "Commissioned Project",
+    "year": "2025",
+    "role": "Designer & Full Stack Developer",
+    "description": "A commissioned project for Abalos Funeral Homes, a premier funeral service provider. The website showcases the company's services, client testimonials, and booking options. Built using TypeScript and PHP for fast and reliable subscription mnagement.",
+    "images": [
+      "projects/lifeease.svg"
+    ],
+    "link": "https://abalosfuneralhomes.vercel.app/",
+    "featured": true
+  },
+  {
     "id": "portfolio",
     "title": "Design Portfolio",
     "slug": "portfolio",
@@ -8,7 +36,7 @@
     "role": "Designer & Developer",
     "description": "A showcase of my design work, featuring a collection of projects that highlight my skills and creativity. Each project is presented with a detailed description, including the problem it solves, the design process, and the final solution. The portfolio is built using Astro, a modern static site generator, and Tailwind CSS, a utility-first CSS framework. The source code is available on GitHub",
     "images": [
-      "portfolio.svg"
+      "projects/portfolio.svg"
     ],
     "link": "https://snarpdev.vercel.app",
     "github": "https://github.com/Prannsss/snarp-portfolio",
@@ -20,10 +48,10 @@
     "slug": "budgee",
     "category": "Finance",
     "year": "2025",
-    "role": "UI/UX Designer & Developer",
+    "role": "UI/UX Designer & Full Stack Developer",
     "description": "A personal finance app that helps users manage their budgets, track expenses, and achieve their financial goals. Budgee offers a user-friendly interface with features like expense categorization, budget planning, and financial insights. The app is built using React TypeScript for cross-platform compatibility and integrates with various financial APIs for real-time data synchronization.",
     "images": [
-      "budgee.svg"
+      "projects/budgee.svg"
     ],
     "link": "https://budgeebuddy.vercel.app/",
     "github": "https://github.com/Prannsss/Budgee",
@@ -38,7 +66,7 @@
     "role": "UI/UX Designer & Developer",
     "description": "A transportation app that helps users find and book rental vehicles in Cebu. Sakay Cebu offers a user-friendly interface with features like vehicle search, booking management, and real-time availability tracking. The app is built using React Typescript for cross-platform compatibility.",
     "images": [
-      "sakaycebu.svg"
+      "projects/sakaycebu.svg"
     ],
     "link": "https://sakaycebu.vercel.app/",
     "github": "https://github.com/Prannsss/Sakay-Cebu",
@@ -53,7 +81,7 @@
     "role": "UI/UX Designer & Developer",
     "description": "A room rental WebApp that helps users find and book rental rooms in Cebu. ROME offers a user-friendly interface with features like room search, booking management, and real-time availability tracking. The app is built using HTML, CSS, and JavaScript.",
     "images": [
-      "rome.svg"
+      "projects/rome.svg"
     ],
     "github": "https://github.com/Prannsss/ROME",
     "featured": true
@@ -67,7 +95,7 @@
     "role": "UI/UX Designer & Developer",
     "description": "A bus booking WebApp that helps users seamlessly and book bus tickets in Cebu. BusQ offers a user-friendly interface with features like bus search, booking management, and real-time availability tracking. The app is built using TypeScript, Next.js, and Node.js.",
     "images": [
-      "busq.svg"
+      "projects/busq.svg"
     ],
     "github": "https://github.com/Prannsss/BusQ",
     "featured": true
@@ -81,7 +109,7 @@
     "role": "UI/UX Designer & Developer",
     "description": "A platform that helps students understand Binary conversion. Binary offers a user-friendly interface with features like Binary to Decimal conversion, Decimal to Binary conversion, and Binary to Hexadecimal conversion. The app is built using HTML, CSS, and JavaScript.",
     "images": [
-      "binary.svg"
+      "projects/binary.svg"
     ],
     "link": "https://prannsss.github.io/BINARY",
     "github": "https://github.com/Prannsss/BINARY",
@@ -96,7 +124,7 @@
     "role": "UI/UX Designer & Developer",
     "description": "A platform that helps students understand Exponential Functions. It offers a user-friendly interface with features like function visualization, interactive graphs, and real-world applications. The app is built using HTML, CSS, and JavaScript.",
     "images": [
-      "expfunction.svg"
+      "projects/expfunction.svg"
     ],
     "link": "https://prannsss.github.io/Exponential-Functions",
     "github": "https://github.com/Prannsss/Exponential-Functions",
@@ -111,7 +139,7 @@
     "role": "UI/UX Designer & Developer",
     "description": "My first ever portfolio design. It showcases my skills and projects. The portfolio is built using HTML, CSS, and JavaScript.",
     "images": [
-      "snarp.svg"
+      "projects/snarp.svg"
     ],
     "link": "https://prannsss.github.io/Snarp",
     "github": "https://github.com/Prannsss/Snarp",

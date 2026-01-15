@@ -164,8 +164,8 @@ const links = [
     // --- Animation Parameters ---
     const ANIMATION_START_SCROLL = 20;
     const ANIMATION_END_SCROLL = 150;
-    const EXPANDED_WIDTH = 800,
-      COLLAPSED_WIDTH = 240;
+    const EXPANDED_WIDTH = 900,
+      COLLAPSED_WIDTH = 300;
     const EXPANDED_PADDING = 20,
       COLLAPSED_PADDING = 16;
     const EXPANDED_LOGO = 48,
@@ -298,14 +298,14 @@ const links = [
       // Animate burger to X
       if (!isOpen) {
         // Transform to X
-        hamburgerLines[0].style.transform = "rotate(45deg) translateY(8px)";
+        hamburgerLines[0].style.transform = "rotate(45deg) translate(6px, 6px)";
         hamburgerLines[1].style.opacity = "0";
-        hamburgerLines[2].style.transform = "rotate(-45deg) translateY(-8px)";
+        hamburgerLines[2].style.transform = "rotate(-45deg) translate(6px, -6px)";
       } else {
         // Transform back to burger
-        hamburgerLines[0].style.transform = "rotate(0) translateY(0)";
+        hamburgerLines[0].style.transform = "rotate(0) translate(0, 0)";
         hamburgerLines[1].style.opacity = "1";
-        hamburgerLines[2].style.transform = "rotate(0) translateY(0)";
+        hamburgerLines[2].style.transform = "rotate(0) translate(0, 0)";
       }
     });
     
@@ -315,9 +315,9 @@ const links = [
         link.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
           // Reset burger icon
-          hamburgerLines[0].style.transform = "rotate(0) translateY(0)";
+          hamburgerLines[0].style.transform = "rotate(0) translate(0, 0)";
           hamburgerLines[1].style.opacity = "1";
-          hamburgerLines[2].style.transform = "rotate(0) translateY(0)";
+          hamburgerLines[2].style.transform = "rotate(0) translate(0, 0)";
         })
       );
 

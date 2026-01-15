@@ -1,5 +1,6 @@
 ---
 import FadeIn from '../FadeIn';
+import { MapPin } from 'lucide-react';
 ---
 <section id="home" class="section py-32 md:py-50" style="background: rgb(var(--color-bg-primary));">
   <FadeIn client:visible>
@@ -37,12 +38,12 @@ import FadeIn from '../FadeIn';
         tailored solutions, guiding you from strategy to success in a competitive market.
       </p>
       
-      <!-- CTA Button with Glare Effect -->
-      <div class="mb-16 md:mb-20">
+      <!-- CTA Buttons with Glare Effect -->
+      <div class="mb-16 md:mb-20 flex flex-row items-center justify-center gap-3 md:gap-4">
         <a 
           href="#contact" 
           id="contact-btn"
-          class="relative inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 overflow-hidden group"
+          class="relative inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-base md:text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 overflow-hidden group"
         >
           <span class="relative z-10">Contact Me</span>
           <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,6 +53,19 @@ import FadeIn from '../FadeIn';
           <span class="glare-auto absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full skew-x-12"></span>
           <!-- Hover glare -->
           <span class="glare-hover absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 -translate-x-full skew-x-12"></span>
+        </a>
+        
+        <a 
+          href="resume/resume.pdf" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 hover:scale-105 border-2"
+          style="border-color: rgb(var(--color-text-primary)); color: rgb(var(--color-text-primary));"
+        >
+          <span>Resume</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
         </a>
       </div>
 
@@ -67,7 +81,7 @@ import FadeIn from '../FadeIn';
           <div class="flex gap-1 text-yellow-500">
             {'★'.repeat(5)}
           </div>
-          <p class="text-sm" style="color: rgb(var(--color-text-secondary));">Trusted by 11 clients <span><i>so far...</i></span></p>
+          <p class="text-sm" style="color: rgb(var(--color-text-secondary));">Trusted by 11 clients</span></p>
         </div>
       </div>
     </div>
