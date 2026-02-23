@@ -1,5 +1,6 @@
 ---
 import FadeIn from '../FadeIn';
+import experiences from '../../data/experience.json';
 ---
 <section id="experience" class="section py-20 md:py-32" style="background: rgb(var(--color-bg-primary));">
   <FadeIn client:visible>
@@ -11,86 +12,63 @@ import FadeIn from '../FadeIn';
         <div class="absolute left-8 top-0 bottom-0 w-px" style="background: rgb(var(--color-border));"></div>
         
         <div class="space-y-12">
-          <!-- Experience Item 1 -->
-          <div class="relative flex items-start gap-8">
-            <!-- Timeline Dot -->
-            <div class="flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 relative z-10"></div>
-            
-            <!-- Company Logo -->
-            <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
-              <img 
-                src="/logodark.svg" 
-                alt="France Velarde Logo" 
-                class="w-full h-full object-contain"
-              />
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1 min-w-0">
-              <div class="flex items-start justify-between mb-2">
-                <div>
-                  <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">Freelance Web Designer and Developer</h3>
-                  <p class="text-lg" style="color: rgb(var(--color-accent));">Self-Employed</p>
+          {experiences.map((exp) => (
+            <div class="relative flex items-start gap-8">
+              <!-- Timeline Dot -->
+              <div class="flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 relative z-10"></div>
+              
+              <!-- Company Logo -->
+              <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
+                {exp.link ? (
+                  <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                    <img 
+                      data-logo-light={`/${exp.logoLight}`}
+                      data-logo-dark={`/${exp.logoDark}`}
+                      alt={`${exp.company} Logo`} 
+                      class="theme-logo w-full h-full object-contain"
+                    />
+                  </a>
+                ) : (
+                  <img 
+                    data-logo-light={`/${exp.logoLight}`}
+                    data-logo-dark={`/${exp.logoDark}`}
+                    alt={`${exp.company} Logo`} 
+                    class="theme-logo w-full h-full object-contain"
+                  />
+                )}
+              </div>
+              
+              <!-- Content -->
+              <div class="flex-1 min-w-0">
+                <div class="flex items-start justify-between mb-2">
+                  <div>
+                    <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">{exp.title}</h3>
+                    {exp.link ? (
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" class="text-lg hover:underline" style="color: rgb(var(--color-accent));">{exp.company}</a>
+                    ) : (
+                      <p class="text-lg" style="color: rgb(var(--color-accent));">{exp.company}</p>
+                    )}
+                  </div>
+                  <span class="text-sm font-medium" style="color: rgb(var(--color-text-secondary));">{exp.period}</span>
                 </div>
-                <span class="text-sm font-medium" style="color: rgb(var(--color-text-secondary));">2021-Present</span>
-              </div>
-              
-              <div class="mb-4">
-                <h4 class="font-medium mb-2" style="color: rgb(var(--color-text-primary));">Activities</h4>
-                <ul class="space-y-2 text-sm" style="color: rgb(var(--color-text-primary));">
-                  <li>• Designed and developed responsive websites for various clients including e-commerce platforms, corporate websites, and portfolio sites.</li>
-                  <li class="experience-extra hidden">• Implemented modern web technologies including React, Vue.js, and Next.js to create dynamic user interfaces.</li>
-                  <li class="experience-extra hidden">• Collaborated with clients to understand their requirements and delivered custom solutions that exceed expectations.</li>
-                  <li class="experience-extra hidden">• Optimized websites for performance, SEO, and accessibility standards, resulting in improved user engagement.</li>
-                </ul>
-              </div>
-              
-              <button onclick="toggleExperience(this)" class="see-more-btn text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:opacity-80 active:scale-95" style="color: rgb(var(--color-text-secondary)); background: rgb(var(--color-bg-secondary));">
-                See more
-              </button>
-            </div>
-          </div>
-
-          <!-- Experience Item 2 -->
-          <div class="relative flex items-start gap-8">
-            <!-- Timeline Dot -->
-            <div class="flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 relative z-10"></div>
-            
-            <!-- Company Logo -->
-            <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
-              <img 
-                src="/toyota.svg" 
-                alt="Toyota Logo" 
-                class="w-full h-full object-contain"
-              />
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1 min-w-0">
-              <div class="flex items-start justify-between mb-2">
-                <div>
-                  <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">Graphic Designer and Social Media Manager</h3>
-                  <p class="text-lg" style="color: rgb(var(--color-accent));">Toyota Mandaue South Cebu</p>
+                
+                <div class="mb-4">
+                  <h4 class="font-medium mb-2" style="color: rgb(var(--color-text-primary));">Activities</h4>
+                  <ul class="space-y-2 text-sm" style="color: rgb(var(--color-text-primary));">
+                    {exp.activities.map((activity, i) => (
+                      <li class={i > 0 ? 'experience-extra hidden' : ''}>• {activity}</li>
+                    ))}
+                  </ul>
                 </div>
-                <span class="text-sm font-medium" style="color: rgb(var(--color-text-secondary));">October 2024 - Present</span>
+                
+                {exp.activities.length > 1 && (
+                  <button onclick="toggleExperience(this)" class="see-more-btn text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:opacity-80 active:scale-95" style="color: rgb(var(--color-text-secondary)); background: rgb(var(--color-bg-secondary));">
+                    See more
+                  </button>
+                )}
               </div>
-              
-              <div class="mb-4">
-                <h4 class="font-medium mb-2" style="color: rgb(var(--color-text-primary));">Activities</h4>
-                <ul class="space-y-2 text-sm" style="color: rgb(var(--color-text-primary));">
-                  <li>• Designed Graphics for Facebook advertising at Toyota Mandaue South Cebu. </li>
-                  <li class="experience-extra hidden">• Optimized Ad targeting and demographics leading to a 70% increase in monthly sales and closed deals. </li>
-                  <li class="experience-extra hidden">• Implemented auto reply messages to handle customer inquiries and support.</li>
-                </ul>
-              </div>
-              
-              <button onclick="toggleExperience(this)" class="see-more-btn text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:opacity-80 active:scale-95" style="color: rgb(var(--color-text-secondary)); background: rgb(var(--color-bg-secondary));">
-                See more
-              </button>
             </div>
-          </div>
-            
-          </div>
+          ))}
         </div>
       </div>
       
@@ -150,6 +128,29 @@ import FadeIn from '../FadeIn';
     
     button.textContent = isExpanded ? 'See more' : 'See less';
   }
+
+  // Theme-aware logo swapping
+  function updateLogos() {
+    const isDark = document.documentElement.classList.contains('dark');
+    document.querySelectorAll('.theme-logo').forEach((img) => {
+      const lightSrc = img.getAttribute('data-logo-light');
+      const darkSrc = img.getAttribute('data-logo-dark');
+      img.src = isDark ? darkSrc : lightSrc;
+    });
+  }
+
+  // Run on initial load
+  updateLogos();
+
+  // Observe dark class changes on <html>
+  const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      if (mutation.attributeName === 'class') {
+        updateLogos();
+      }
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true });
 
   // Shine effect every 1.5 seconds
   setInterval(() => {

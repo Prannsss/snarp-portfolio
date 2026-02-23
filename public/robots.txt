@@ -2,6 +2,11 @@
 User-agent: *
 Allow: /
 
+# Allow crawling of experience and project assets
+Allow: /experience/
+Allow: /projects/
+Allow: /resume/
+
 # Sitemap location
 Sitemap: https://snarpdev.vercel.app/sitemap.xml
 
