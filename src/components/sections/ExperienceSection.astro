@@ -40,16 +40,30 @@ import experiences from '../../data/experience.json';
               
               <!-- Content -->
               <div class="flex-1 min-w-0">
-                <div class="flex items-start justify-between mb-2">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between mb-2 gap-2 sm:gap-0">
                   <div>
-                    <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">{exp.title}</h3>
                     {exp.link ? (
-                      <a href={exp.link} target="_blank" rel="noopener noreferrer" class="text-lg hover:underline" style="color: rgb(var(--color-accent));">{exp.company}</a>
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" class="text-xl font-semibold hover:underline" style="color: rgb(var(--color-text-primary));">{exp.company}</a>
                     ) : (
-                      <p class="text-lg" style="color: rgb(var(--color-accent));">{exp.company}</p>
+                      <h3 class="text-xl font-semibold" style="color: rgb(var(--color-text-primary));">{exp.company}</h3>
                     )}
+                    <div class="flex flex-wrap items-center gap-3 mt-1">
+                      <p class="text-lg" style="color: rgb(var(--color-accent));">{exp.title}</p>
+                      {exp.techStack && exp.techStack.length > 0 && (
+                        <div class="flex items-center gap-2 sm:ml-2 sm:border-l sm:pl-3" style="border-color: rgb(var(--color-border));">
+                          {exp.techStack.map((tech) => (
+                            <img 
+                              src={tech.icon} 
+                              alt={tech.name} 
+                              title={tech.name}
+                              class="w-5 h-5 object-contain dark:brightness-90"
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <span class="text-sm font-medium" style="color: rgb(var(--color-text-secondary));">{exp.period}</span>
+                  <span class="text-sm font-medium whitespace-nowrap" style="color: rgb(var(--color-text-secondary));">{exp.period}</span>
                 </div>
                 
                 <div class="mb-4">

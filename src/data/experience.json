@@ -7,6 +7,12 @@
     "logoDark": "experience/biliswhite.svg",
     "link": "https://bilisdelivery.com/",
     "period": "2025 - Present",
+    "techStack": [
+      { "name": "Flutter", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" },
+      { "name": "PHP", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+      { "name": "GoDaddy", "icon": "https://cdn.simpleicons.org/godaddy/1BDBDB" },
+      { "name": "Cpanel", "icon": "https://cdn.simpleicons.org/cpanel/FF6C2C" }
+    ],
     "activities": [
       "Led the design, development, migration, and large-scale refactoring of the entire BilisDelivery ecosystem — encompassing rider, admin, merchant, and customer-facing applications.",
       "Re-architected legacy codebases for improved maintainability, scalability, and performance across all platform verticals.",
@@ -22,6 +28,12 @@
     "logoDark": "experience/klinikahub.svg",
     "link": "https://klinikahub.com/",
     "period": "2025 - Present",
+    "techStack": [
+      { "name": "HTML", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+      { "name": "TailwindCSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      { "name": "PHP", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+      { "name": "Cpanel", "icon": "https://cdn.simpleicons.org/cpanel/FF6C2C" }
+    ],
     "activities": [
       "Spearheaded the end-to-end design, development, and deployment of KlinikaHub — a scalable, multi-tenant SaaS platform for clinic management.",
       "Architected and implemented core modules including patient records, appointment scheduling, billing, and analytics dashboards.",
@@ -37,6 +49,14 @@
     "logoDark": "experience/logolight.svg",
     "link": null,
     "period": "2021 - Present",
+    "techStack": [
+      { "name": "Next.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+      { "name": "TypeScript", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+      { "name": "Node.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { "name": "Supabase", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+      { "name": "Vercel", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" },
+      { "name": "Render", "icon": "https://cdn.simpleicons.org/render/46E3B7" }
+    ],
     "activities": [
       "Designed and developed responsive websites for various clients including e-commerce platforms, corporate websites, and portfolio sites.",
       "Implemented modern web technologies including React, Vue.js, and Next.js to create dynamic user interfaces.",
@@ -52,6 +72,10 @@
     "logoDark": "experience/toyota.svg",
     "link": null,
     "period": "October 2024 - Present",
+    "techStack": [
+      { "name": "Canva", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" },
+      { "name": "Facebook", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/facebook/facebook-original.svg" }
+    ],
     "activities": [
       "Designed Graphics for Facebook advertising at Toyota Mandaue South Cebu.",
       "Optimized Ad targeting and demographics leading to a 70% increase in monthly sales and closed deals.",
