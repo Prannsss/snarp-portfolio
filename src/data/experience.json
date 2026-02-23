@@ -1,4 +1,19 @@
 [
+{
+    "id": "bilisdelivery",
+    "title": "Full Stack Developer",
+    "company": "BilisDelivery",
+    "logoLight": "experience/bilispurple.svg",
+    "logoDark": "experience/biliswhite.svg",
+    "link": "https://bilisdelivery.com/",
+    "period": "2025 - Present",
+    "activities": [
+      "Led the design, development, migration, and large-scale refactoring of the entire BilisDelivery ecosystem — encompassing rider, admin, merchant, and customer-facing applications.",
+      "Re-architected legacy codebases for improved maintainability, scalability, and performance across all platform verticals.",
+      "Implemented seamless data migration strategies to transition between tech stacks with zero downtime.",
+      "Collaborated cross-functionally to align product features with business goals, delivering a unified and consistent user experience across all applications."
+    ]
+  },
   {
     "id": "klinikahub",
     "title": "Full Stack Developer",
@@ -12,21 +27,6 @@
       "Architected and implemented core modules including patient records, appointment scheduling, billing, and analytics dashboards.",
       "Designed intuitive UI/UX workflows tailored for healthcare professionals, streamlining daily clinic operations and reducing administrative overhead.",
       "Ensured production reliability through performance optimization, automated testing, and continuous integration/delivery pipelines."
-    ]
-  },
-  {
-    "id": "bilisdelivery",
-    "title": "Full Stack Developer",
-    "company": "BilisDelivery",
-    "logoLight": "experience/bilispurple.svg",
-    "logoDark": "experience/biliswhite.svg",
-    "link": "https://bilisdelivery.com/",
-    "period": "2024 - Present",
-    "activities": [
-      "Led the design, development, migration, and large-scale refactoring of the entire BilisDelivery ecosystem — encompassing rider, admin, merchant, and customer-facing applications.",
-      "Re-architected legacy codebases for improved maintainability, scalability, and performance across all platform verticals.",
-      "Implemented seamless data migration strategies to transition between tech stacks with zero downtime.",
-      "Collaborated cross-functionally to align product features with business goals, delivering a unified and consistent user experience across all applications."
     ]
   },
   {
